@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+/* Structure: Header -> Main -> Footer -> Miscellaneous -> CV, About, Contact */
+
+/* Header */
+
+.navContainer {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.navContainer h1 {
+  font-family: "Quicksand", Georgia, "Times New Roman", Times, serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+}
+
+/* Header - Navbar */
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  padding: 0px 15px;
+  font-size: 1.28rem;
+}
+
+/* Main */
+
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.mainContainer div {
+  height: 700px;
+  flex: 0 1 48%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.mainLeftBox {
+  background-color: red;
+  background-image: url(../img/vimmerby.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.homeBackgroundText {
+  font-size: 6rem;
+  text-align: center;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.mainRightBox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 2em;
+  padding: 30px;
+  background-color: #eeeeee;
+}
+
+/* Main - Project Cards */
+
+.projectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.projectCard {
+  height: 500px;
+  flex: 0 1 23%;
+  position: relative;
+  background-color: aqua;
+}
+
+.projectCard > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectText {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 40%;
+  color: white;
+  font-size: 50px;
+  width: 90%;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.cardItem2,
+.cardItem4 {
+  background-color: purple;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  height: 150px;
+  margin-top: 3rem;
+}
+
+footer > p {
+  font-size: 2rem;
+}
+
+footer a {
+  text-transform: capitalize;
+  color: black;
+}
+
+.footerEmail {
+  text-transform: none;
+}
+
+/* Miscellaneous */
+
+h2 {
+  margin: 20px;
+  margin-bottom: 40px;
+  font-size: 100px;
+}
+
+.currentTab {
+  color: gray;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+
+a:hover {
+  color: red;
+}
+
+a.projectButton {
+  appearance: button;
+  text-decoration: none;
+  position: absolute;
+  top: 85%;
+  left: 5%;
+  width: 11vw;
+  height: 50px;
+  background-color: black;
+  text-align: left;
+  padding-left: 8px;
+  padding-top: 16px;
+  text-transform: none;
+}
+
+/* CV, About, Contact */
+
+.tabTopicContainer {
+  display: flex;
+  background-color: #eeeeee;
+  margin: 30px 1%;
+  justify-content: center;
+}
+
+.tabTopicSection {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 2rem;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.cvIntroText {
+  text-align: center;
+  font-weight: bold;
+}
+
+.cvInfoHighlight {
+  color: lightskyblue;
+}
+
+/* Non-desktop version */
+
+@media only screen and (max-width: 768px) {
+  /* Header */
+
+  .navContainer {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* Header - Navbar */
+
+  nav li {
+    font-size: 1rem;
+  }
+  nav ul {
+    padding: 0;
+  }
+
+  /* Main */
+
+  .mainContainer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 700px;
+  }
+
+  .mainContainer div {
+    height: 50%;
+    margin: 10px 10px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .mainRightBox {
+    font-size: 20px;
+    padding: 0px 30px;
+  }
+
+  /* Main - Project Cards */
+
+  .projectContainer {
+    margin: 0 10px;
+    gap: 4%;
+  }
+
+  .projectCard {
+    flex-direction: column;
+    flex: 0 1 48%;
+    height: 250px;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cardItem2,
+  .cardItem3 {
+    background-color: purple;
+  }
+
+  .cardItem4 {
+    background-color: aqua;
+  }
+  .projectText {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  /* Footer */
+
+  footer {
+    height: 100px;
+  }
+
+  footer > p {
+    font-size: 1.1rem;
+  }
+
+  /* Miscellaneous */
+
+  h2 {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-size: 2em;
+  }
+
+  a.projectButton {
+    width: 55%;
+    top: 85%;
+    left: 5%;
+    height: 25px;
+    padding-top: 0.15rem;
+  }
+
+  /* CV, About, Contact */
+
+  .tabTopicContainer {
+    margin: 10px;
+  }
+
+  .tabTopicSection {
+    font-size: 1.5rem;
+  }
+
+  .cvInfoHighlight {
+    font-size: 1.3rem;
+  }
+}
