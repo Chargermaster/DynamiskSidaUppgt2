@@ -19,14 +19,42 @@
   <body>
     <header class="navContainer">
       <h1>Alexander Söderwall</h1>
-      <nav>
+      <!-- IMPORTED FROM CODEPEN - START -->
+      <!-- MENU OVERLAY -->
+      <div class="overlay overlay-slide-left" id="overlay">
+        <!-- MENU ITEMS -->
+        <nav>
+          <ul>
+            <li id="nav-1" class="slide-out-1 center">
+              <a href="index.html" class="center">Home</a>
+            </li>
+            <li id="nav-2" class="slide-out-2 center">
+              <a href="cv.html" class="center">CV</a>
+            </li>
+            <li id="nav-3" class="slide-out-3 center">
+              <a href="about.html" class="center">About</a>
+            </li>
+            <li id="nav-4" class="slide-out-4 center">
+              <a href="contact.html" class="center currentTab">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- HAMBURGER MENU -->
+      <div class="hamburger-menu" id="hamburger-menu">
+        <div class="menu-bar1"></div>
+        <div class="menu-bar2"></div>
+        <div class="menu-bar3"></div>
+      </div>
+      <!-- END -->
+      <!-- <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a class="currentTab" href="#">Home</a></li>
           <li><a href="cv.html">CV</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a class="currentTab" href="#">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav>
+      </nav>-->
     </header>
 
     <main>
@@ -108,5 +136,6 @@
         | <a href="https://github.com/Chargermaster">github</a>
       </p>
     </footer>
+    <script src="js/js.js"></script>
   </body>
 </html>
