@@ -1,3 +1,23 @@
+const test = document.getElementById("CVAttachment");
+
+async function getCV() {
+  const response = await fetch("../json/json.json");
+  if (response.ok) {
+    const json = await response.json();
+    //Loops based on how many objects there are in the json file.
+    for (i = 0; i < Object.keys(json.CV).length; i++) {
+      let testElement = document.createElement(json.CV[i].Element);
+      testElement.textContent = "test";
+      test.appendChild(testElement);
+      console.log(json.CV[i].Element);
+    }
+  } else {
+    console.log("fail");
+  }
+}
+
+getCV();
+
 //IMPORTED FROM CODEPEN - START
 const hamburgerMenu = document.querySelector("#hamburger-menu");
 const overlay = document.querySelector("#overlay");
