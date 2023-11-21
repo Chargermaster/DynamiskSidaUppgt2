@@ -5,6 +5,78 @@
       "LineBreaks": 0,
       "Element": "h2",
       "Class": ""
+    },
+    {
+      "Text": "Här är en komplett översikt av mitt CV:",
+      "LineBreaks": 1,
+      "Element": "p",
+      "Class": "cvIntroText"
+    },
+    {
+      "Text": "FRÄMSTA KOMPETENS",
+      "LineBreaks": 1,
+      "Element": "strong",
+      "Class": "cvInfoHighlight"
+    },
+    {
+      "Text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt consequuntur, ratione sunt labore, dicta nemo tenetur et quasi quae deleniti odit eaque ullam molestiae quam, velit quibusdam. Voluptatum, quod repellendus tempora nihil dolor dolorem iste consequatur nobis doloremque quam sed hic officia tempore aliquid, mollitia voluptate animi voluptates alias minus.",
+      "LineBreaks": 0,
+      "Element": "p",
+      "Class": ""
+    },
+    {
+      "Text": "ARBETSLIVSERFARENHET",
+      "LineBreaks": 1,
+      "Element": "strong",
+      "Class": "cvInfoHighlight"
+    },
+    {
+      "Text": "April 2017 - maj 2017",
+      "LineBreaks": 1,
+      "Element": "i",
+      "Class": "cvInfoHighlight"
+    },
+    {
+      "Text": "Fictional Company AB",
+      "LineBreaks": 1,
+      "Element": "strong",
+      "Class": "cvInfoHighlight"
+    },
+    {
+      "Text": "Känd stad",
+      "LineBreaks": 1,
+      "Element": "p",
+      "Class": ""
+    },
+    {
+      "Text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit ducimus nulla reiciendis necessitatibus, eveniet itaque odio ipsum iure consectetur qui delectus laboriosam? Provident earum voluptates dolores nihil vero quaerat animi velit sint impedit culpa? Neque dolorum officia unde eligendi rerum asperiores placeat error pariatur dolorem libero id omnis, quo dolor laboriosam cupiditate labore veniam, exercitationem, ipsa corrupti ab suscipit quia delectus. Suscipit sequi eos veniam odio autem, placeat cum?",
+      "LineBreaks": 0,
+      "Element": "p",
+      "Class": ""
+    },
+    {
+      "Text": "April 2017 - maj 2017 (Säsongsarbete)",
+      "LineBreaks": 1,
+      "Element": "i",
+      "Class": "cvInfoHighlight"
+    },
+    {
+      "Text": "F-C AB",
+      "LineBreaks": 1,
+      "Element": "strong",
+      "Class": "cvInfoHighlight"
+    },
+    {
+      "Text": "Känd stad",
+      "LineBreaks": 1,
+      "Element": "p",
+      "Class": ""
+    },
+    {
+      "Text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, accusantium! Aliquam a, nemo fuga voluptate, officiis, corrupti blanditiis neque eum itaque similique vitae saepe. Quaerat optio officiis quasi, sequi sed animi architecto ex ducimus qui dolore odit soluta voluptatibus quibusdam odio incidunt quisquam corporis nihil distinctio eos vitae, cupiditate sint! Quam numquam sit ipsam debitis iure? Facere voluptates, ullam reprehenderit illo deserunt dolor. Explicabo porro autem eligendi neque magnam! Tenetur alias temporibus dolor quidem ea! Maiores iusto architecto adipisci quae tempora ratione asperiores iste ab debitis repellat. Reiciendis eos, impedit repellat voluptatibus quia nihil ducimus labore et, accusamus minima dolorum iusto unde laboriosam ut perspiciatis ullam odit eius dolore minus tempora dolor? Eveniet vel omnis aliquam eius est animi! Voluptatibus.",
+      "LineBreaks": 0,
+      "Element": "p",
+      "Class": ""
     }
   ]
 }

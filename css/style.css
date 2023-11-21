@@ -185,6 +185,7 @@ a.projectButton {
 
 .tabTopicContainer {
   display: flex;
+  flex-direction: column;
   background-color: #eeeeee;
   margin: 30px 1%;
   justify-content: center;
