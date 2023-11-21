@@ -11,9 +11,10 @@ async function getCV() {
     let CVHeader = document.createElement(json.CV[0].Element);
     CVHeader.textContent = json.CV[0].Text;
     CVContainer.appendChild(CVHeader);
+    //Re-Appends the article tag inside of the div to the div or the CVHeader will be added to the bottom of its parent element
     CVContainer.appendChild(CVTextContainer);
 
-    //Loops based on how many objects there are in the json file.
+    //Loops based on how many objects there are in the json file. Skips 0 as the header stays outside.
     for (i = 1; i < Object.keys(json.CV).length; i++) {
       //Creates specified element and adds its text content
       let CVElements = document.createElement(json.CV[i].Element);
@@ -26,6 +27,7 @@ async function getCV() {
 
       //Checks if a linebreak is needed
       if (json.CV[i].LineBreaks > 0) {
+        //Loop in-case more than one linebreak's needed
         for (j = 0; j < json.CV[i].LineBreaks; j++) {
           let lineBreaks = document.createElement("br");
           CVTextContainer.appendChild(lineBreaks);
