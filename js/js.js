@@ -1,3 +1,41 @@
+//Modal script
+const projectButton = document.getElementById("projectButton");
+
+const projectModalAttacher = document.getElementById("projectModalAttacher");
+projectButton.addEventListener("click", showInfo);
+
+let showWindow = false;
+
+function showInfo() {
+  if (showWindow === false) {
+    showWindow = true;
+    let infoWindow = document.createElement("div");
+    infoWindow.id = "infoWindow";
+    infoWindow.style.width = "300px";
+    infoWindow.style.height = "500px";
+    infoWindow.style.backgroundColor = "white";
+    infoWindow.style.zIndex = "8";
+    infoWindow.style.position = "fixed";
+    infoWindow.style.top = "0";
+    projectModalAttacher.appendChild(infoWindow);
+    let testButton = document.createElement("button");
+    testButton.textContent = "Close me";
+    testButton.id = "testButton";
+    infoWindow.appendChild(testButton);
+    testButton.addEventListener("click", function () {
+      closeWindow();
+    });
+  }
+}
+
+function closeWindow() {
+  if (showWindow === true) {
+    showWindow = false;
+    projectModalAttacher.removeChild(infoWindow);
+  }
+}
+
+//JSON read and write function
 const CVContainer = document.getElementById("CvAttachment");
 const CVTextContainer = document.getElementById("CvTextContainer");
 
@@ -45,8 +83,10 @@ async function getCV() {
     console.log("fail");
   }
 }
-
-getCV();
+//Ensure's CV's only loaded on the correct page.
+if (CVContainer != null && CVTextContainer != null) {
+  getCV();
+}
 
 //IMPORTED FROM CODEPEN - START
 const hamburgerMenu = document.querySelector("#hamburger-menu");

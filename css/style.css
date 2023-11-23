@@ -156,29 +156,34 @@ h2 {
   color: gray;
 }
 
-a {
-  text-decoration: none;
+/* button {
   text-transform: uppercase;
   color: white;
-}
+} */
 
 a:hover {
   color: red;
 }
 
-a.projectButton {
-  appearance: button;
-  text-decoration: none;
+button:hover {
+  color: red;
+}
+
+.projectButton {
   position: absolute;
+  text-transform: uppercase;
+  border: 0px;
   top: 85%;
   left: 5%;
   width: 11vw;
   height: 50px;
+  color: white;
   background-color: black;
   text-align: left;
+  line-height: -100px;
   padding-left: 8px;
   padding-top: 16px;
-  text-transform: none;
+  padding-bottom: 16px;
 }
 
 /* CV, About, Contact */
@@ -477,12 +482,13 @@ nav li a:active {
     font-size: 2em;
   }
 
-  a.projectButton {
+  .projectButton {
     width: 55%;
     top: 85%;
     left: 5%;
     height: 25px;
     padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
   }
 
   /* CV, About, Contact */
