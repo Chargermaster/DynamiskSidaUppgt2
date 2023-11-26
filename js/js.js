@@ -1,28 +1,48 @@
 //Modal script
 const projectButton = document.getElementById("projectButton");
-
-const projectModalAttacher = document.getElementById("projectModalAttacher");
 projectButton.addEventListener("click", showInfo);
+const projectModalAttacher = document.getElementById("projectModalAttacher");
 
 let showWindow = false;
 
 function showInfo() {
   if (showWindow === false) {
     showWindow = true;
+    console.log(this.id);
+    let transparentBackground = document.createElement("div");
+    transparentBackground.style.backgroundColor = "rgba(0,0,0,0.7";
+    transparentBackground.style.width = "100vw";
+    transparentBackground.style.height = "100vh";
+    transparentBackground.style.zIndex = "8";
+    transparentBackground.style.position = "fixed";
+    transparentBackground.style.top = "0px";
+    transparentBackground.style.display = "flex";
+    transparentBackground.style.justifyContent = "center";
+    transparentBackground.style.alignItems = "center";
+    projectModalAttacher.appendChild(transparentBackground);
+
     let infoWindow = document.createElement("div");
     infoWindow.id = "infoWindow";
-    infoWindow.style.width = "300px";
-    infoWindow.style.height = "500px";
+    infoWindow.style.width = "500px";
+    infoWindow.style.height = "300px";
     infoWindow.style.backgroundColor = "white";
     infoWindow.style.zIndex = "8";
     infoWindow.style.position = "fixed";
-    infoWindow.style.top = "0";
-    projectModalAttacher.appendChild(infoWindow);
-    let testButton = document.createElement("button");
-    testButton.textContent = "Close me";
-    testButton.id = "testButton";
-    infoWindow.appendChild(testButton);
-    testButton.addEventListener("click", function () {
+    infoWindow.style.display = "flex";
+    infoWindow.style.flexDirection = "column";
+    infoWindow.style.alignItems = "flex-end";
+    infoWindow.style.padding = "0.5rem 1rem";
+    transparentBackground.appendChild(infoWindow);
+
+    let closeButton = document.createElement("button");
+    closeButton.id = "closeButton";
+    closeButton.textContent = "X";
+    closeButton.style.fontSize = "1.5rem";
+    closeButton.style.background = "none";
+    closeButton.style.border = "none";
+
+    infoWindow.appendChild(closeButton);
+    closeButton.addEventListener("click", function () {
       closeWindow();
     });
   }
@@ -31,7 +51,9 @@ function showInfo() {
 function closeWindow() {
   if (showWindow === true) {
     showWindow = false;
-    projectModalAttacher.removeChild(infoWindow);
+    projectModalAttacher.lastChild.remove();
+
+    // projectModalAttacher.removeChild(infoWindow);
   }
 }
 
