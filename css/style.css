@@ -161,6 +161,11 @@ h2 {
   color: white;
 } */
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 a:hover {
   color: red;
 }

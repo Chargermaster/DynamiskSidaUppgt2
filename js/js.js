@@ -1,6 +1,6 @@
 //Modal script
-const projectButton = document.getElementById("projectButton");
-projectButton.addEventListener("click", showInfo);
+const CVButton = document.getElementById("CVButton");
+CVButton.addEventListener("click", showInfo);
 const projectModalAttacher = document.getElementById("projectModalAttacher");
 
 let showWindow = false;
@@ -8,7 +8,6 @@ let showWindow = false;
 function showInfo() {
   if (showWindow === false) {
     showWindow = true;
-    console.log(this.id);
     let transparentBackground = document.createElement("div");
     transparentBackground.style.backgroundColor = "rgba(0,0,0,0.7";
     transparentBackground.style.width = "100vw";
@@ -23,7 +22,7 @@ function showInfo() {
 
     let infoWindow = document.createElement("div");
     infoWindow.id = "infoWindow";
-    infoWindow.style.width = "500px";
+    infoWindow.style.maxWidth = "500px";
     infoWindow.style.height = "300px";
     infoWindow.style.backgroundColor = "white";
     infoWindow.style.zIndex = "8";
@@ -31,7 +30,7 @@ function showInfo() {
     infoWindow.style.display = "flex";
     infoWindow.style.flexDirection = "column";
     infoWindow.style.alignItems = "flex-end";
-    infoWindow.style.padding = "0.5rem 1rem";
+    infoWindow.style.margin = "0.5rem 1rem";
     transparentBackground.appendChild(infoWindow);
 
     let closeButton = document.createElement("button");
@@ -39,12 +38,56 @@ function showInfo() {
     closeButton.textContent = "X";
     closeButton.style.fontSize = "1.5rem";
     closeButton.style.background = "none";
+    closeButton.style.backgroundColor = "teal";
+    closeButton.style.padding = "0.5rem 1rem";
+    closeButton.style.width = "100%";
     closeButton.style.border = "none";
+    closeButton.style.textAlign = "end";
 
     infoWindow.appendChild(closeButton);
     closeButton.addEventListener("click", function () {
       closeWindow();
     });
+    //The other else if statements are identical with different text content/links.
+    //Only this initial if-statement will get an explanation.
+
+    //First it determines the content based on the button's ID.
+    if (this.id === "CVButton") {
+      //Creates a div to store the information and to center the content while text button can remain tucked to the side.
+      //It covers the info window and centers the content.
+      let infoDiv = document.createElement("div");
+      infoDiv.style.display = "flex";
+      infoDiv.style.flexDirection = "row";
+      infoDiv.style.width = "100%";
+      infoDiv.style.height = "100%";
+      infoDiv.style.padding = "0.5rem 1rem";
+      infoWindow.appendChild(infoDiv);
+      //Creates a p tag to explain what the project is about.
+      let cvInfo = document.createElement("p");
+      cvInfo.textContent =
+        "CV sida är just denna sida du är på nu. Det är ett projekt som var den första stora uppgiften på Chas Academys Fullstack Javascript program. Ni kan nå CV delen av sidan: ";
+      cvInfo.style.fontSize = "1.3rem";
+      //Append it to the div (div - info)
+      infoDiv.appendChild(cvInfo);
+      //Creates the link that leads to the actual project.
+      let cvLink = document.createElement("a");
+      cvLink.href = "/cv.html";
+      //A seemingly complicated solution to a simple problem.
+      //Apprently elements and styles created via JS takes precidence over style rules in a .css document so a:hover doesn't work(?)
+      cvLink.style.color = "black";
+      cvLink.onmouseover = function () {
+        cvLink.style.color = "red";
+      };
+      cvLink.onmouseleave = function () {
+        cvLink.style.color = "black";
+      };
+      //Creates the clickable text for the link.
+      let testLink = document.createTextNode("här");
+      //Append the clickable text to the link.
+      cvLink.appendChild(testLink);
+      //Appends the link to the paragraph (div - link - a)
+      cvInfo.appendChild(cvLink);
+    }
   }
 }
 
