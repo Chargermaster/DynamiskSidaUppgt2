@@ -1,13 +1,18 @@
 //Modal script
+//Finds related buttons and adds event listeners
 const CVButton = document.getElementById("CVButton");
 CVButton.addEventListener("click", showInfo);
+const CVButton2 = document.getElementById("CVButton2");
+CVButton2.addEventListener("click", showInfo);
 const projectModalAttacher = document.getElementById("projectModalAttacher");
 
+//This boolean is more of a safety precaution than anything else.
 let showWindow = false;
 
 function showInfo() {
   if (showWindow === false) {
     showWindow = true;
+    //Creates the transparent background around the modal box
     let transparentBackground = document.createElement("div");
     transparentBackground.style.backgroundColor = "rgba(0,0,0,0.7";
     transparentBackground.style.width = "100vw";
@@ -18,9 +23,11 @@ function showInfo() {
     transparentBackground.style.display = "flex";
     transparentBackground.style.justifyContent = "center";
     transparentBackground.style.alignItems = "center";
+    //Attaches the modal to the parent element of the button or the button would show as being hovered when hovering the modal area.
     projectModalAttacher.appendChild(transparentBackground);
 
-    let infoWindow = document.createElement("div");
+    //Creates the actual modal window and attaches it to the background div which will center it on the screen.
+    let infoWindow = document.createElement("section");
     infoWindow.id = "infoWindow";
     infoWindow.style.maxWidth = "500px";
     infoWindow.style.height = "300px";
@@ -33,6 +40,7 @@ function showInfo() {
     infoWindow.style.margin = "0.5rem 1rem";
     transparentBackground.appendChild(infoWindow);
 
+    //Creates the button and its background and attaches it to the modal window.
     let closeButton = document.createElement("button");
     closeButton.id = "closeButton";
     closeButton.textContent = "X";
@@ -43,8 +51,8 @@ function showInfo() {
     closeButton.style.width = "100%";
     closeButton.style.border = "none";
     closeButton.style.textAlign = "end";
-
     infoWindow.appendChild(closeButton);
+    //Adds an event listener to the button so it can be closed.
     closeButton.addEventListener("click", function () {
       closeWindow();
     });
@@ -55,25 +63,29 @@ function showInfo() {
     if (this.id === "CVButton") {
       //Creates a div to store the information and to center the content while text button can remain tucked to the side.
       //It covers the info window and centers the content.
-      let infoDiv = document.createElement("div");
+      let infoDiv = document.createElement("article");
       infoDiv.style.display = "flex";
       infoDiv.style.flexDirection = "row";
       infoDiv.style.width = "100%";
       infoDiv.style.height = "100%";
       infoDiv.style.padding = "0.5rem 1rem";
       infoWindow.appendChild(infoDiv);
+
       //Creates a p tag to explain what the project is about.
       let cvInfo = document.createElement("p");
       cvInfo.textContent =
-        "CV sida är just denna sida du är på nu. Det är ett projekt som var den första stora uppgiften på Chas Academys Fullstack Javascript program. Ni kan nå CV delen av sidan: ";
+        "CV sida är just denna sida du är på nu. Det är ett projekt som var den första stora uppgiften på Chas Academys Fullstack Javascript program. Ni kan nå den faktiska CV delen av sidan: ";
       cvInfo.style.fontSize = "1.3rem";
+
       //Append it to the div (div - info)
       infoDiv.appendChild(cvInfo);
+
       //Creates the link that leads to the actual project.
       let cvLink = document.createElement("a");
       cvLink.href = "/cv.html";
+
       //A seemingly complicated solution to a simple problem.
-      //Apprently elements and styles created via JS takes precidence over style rules in a .css document so a:hover doesn't work(?)
+      //Apprently styles created via JS takes precidence over style rules in a .css document as they count as inline styling so a:hover doesn't work(?)
       cvLink.style.color = "black";
       cvLink.onmouseover = function () {
         cvLink.style.color = "red";
@@ -81,22 +93,52 @@ function showInfo() {
       cvLink.onmouseleave = function () {
         cvLink.style.color = "black";
       };
+
       //Creates the clickable text for the link.
       let testLink = document.createTextNode("här");
-      //Append the clickable text to the link.
+
+      //Appends the clickable text to the link.
       cvLink.appendChild(testLink);
-      //Appends the link to the paragraph (div - link - a)
+
+      //Appends the link to the paragraph (div - info - a)
+      cvInfo.appendChild(cvLink);
+    } else if (this.id === "CVButton2") {
+      let infoDiv = document.createElement("article");
+      infoDiv.style.display = "flex";
+      infoDiv.style.flexDirection = "row";
+      infoDiv.style.width = "100%";
+      infoDiv.style.height = "100%";
+      infoDiv.style.padding = "0.5rem 1rem";
+      infoWindow.appendChild(infoDiv);
+      let cvInfo = document.createElement("p");
+      cvInfo.textContent = " nå den faktiska CV delen av sidan: ";
+      cvInfo.style.fontSize = "1.3rem";
+      infoDiv.appendChild(cvInfo);
+      let cvLink = document.createElement("a");
+      cvLink.href =
+        "https://chargermaster.github.io/Code_Jam_20203-_NumberGame/";
+      cvLink.target = "_blank";
+      cvLink.style.color = "black";
+      cvLink.onmouseover = function () {
+        cvLink.style.color = "red";
+      };
+      cvLink.onmouseleave = function () {
+        cvLink.style.color = "black";
+      };
+      let testLink = document.createTextNode("här");
+      cvLink.appendChild(testLink);
       cvInfo.appendChild(cvLink);
     }
   }
 }
 
+//Simple function that removes the entire modal window and its background.
+//As far as I'm aware this would *not* leave junk in memory as the children of the removed element are also removed.
 function closeWindow() {
   if (showWindow === true) {
     showWindow = false;
+    //Removes last child which should always be the background that the modal is attached to.
     projectModalAttacher.lastChild.remove();
-
-    // projectModalAttacher.removeChild(infoWindow);
   }
 }
 
@@ -154,6 +196,7 @@ if (CVContainer != null && CVTextContainer != null) {
 }
 
 //IMPORTED FROM CODEPEN - START
+
 const hamburgerMenu = document.querySelector("#hamburger-menu");
 const overlay = document.querySelector("#overlay");
 const nav1 = document.querySelector("#nav-1");
@@ -182,7 +225,13 @@ function toggleNav() {
 
     // Animate In - Nav Items
     navAnimation("out", "in");
+    //ADDED - Extra function not in the original code as I don't want the menu stuck on screen or the user to be able to scroll.
+    window.onscroll = function () {
+      window.scrollTo(0, 0);
+    };
   } else {
+    //ADDED - Extra function not in the original code as I don't want the menu stuck on screen or the user to be able to scroll.
+    window.onscroll = function () {};
     // Animate Out - Overlay
     overlay.classList.replace("overlay-slide-right", "overlay-slide-left");
 

@@ -4,6 +4,7 @@
 }
 
 body {
+  /* Extra font-family at projectButton class as it didn't want to inherit it for unknown reasons */
   font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
@@ -189,6 +190,7 @@ button:hover {
   padding-left: 8px;
   padding-top: 16px;
   padding-bottom: 16px;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
 /* CV, About, Contact */
