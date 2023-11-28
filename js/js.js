@@ -2,9 +2,13 @@
 //Finds related buttons and adds event listeners
 const CVButton = document.getElementById("CVButton");
 CVButton.addEventListener("click", showInfo);
-const CVButton2 = document.getElementById("CVButton2");
-CVButton2.addEventListener("click", showInfo);
+const NumbersGame = document.getElementById("NumbersGame");
+NumbersGame.addEventListener("click", showInfo);
 const projectModalAttacher = document.getElementById("projectModalAttacher");
+const Blank1 = document.getElementById("BlankItem1");
+Blank1.addEventListener("click", showInfo);
+const Blank2 = document.getElementById("BlankItem2");
+Blank2.addEventListener("click", showInfo);
 
 //This boolean is more of a safety precaution than anything else.
 let showWindow = false;
@@ -102,7 +106,7 @@ function showInfo() {
 
       //Appends the link to the paragraph (div - info - a)
       cvInfo.appendChild(cvLink);
-    } else if (this.id === "CVButton2") {
+    } else if (this.id === "NumbersGame") {
       let infoDiv = document.createElement("article");
       infoDiv.style.display = "flex";
       infoDiv.style.flexDirection = "row";
@@ -111,7 +115,8 @@ function showInfo() {
       infoDiv.style.padding = "0.5rem 1rem";
       infoWindow.appendChild(infoDiv);
       let cvInfo = document.createElement("p");
-      cvInfo.textContent = " nå den faktiska CV delen av sidan: ";
+      cvInfo.textContent =
+        "Litet JavaScript projekt som gjordes under CodeJam 2023. Målet med spelet är att man ska gissa ett tal från 1-100 på fem försök. Spelet kommer säga om din gisning är för hög eller för låg. Ni kan nå spelet: ";
       cvInfo.style.fontSize = "1.3rem";
       infoDiv.appendChild(cvInfo);
       let cvLink = document.createElement("a");
@@ -128,6 +133,60 @@ function showInfo() {
       let testLink = document.createTextNode("här");
       cvLink.appendChild(testLink);
       cvInfo.appendChild(cvLink);
+    } else if (this.id === "BlankItem1") {
+      let infoDiv = document.createElement("article");
+      infoDiv.style.display = "flex";
+      infoDiv.style.flexDirection = "row";
+      infoDiv.style.width = "100%";
+      infoDiv.style.height = "100%";
+      infoDiv.style.padding = "0.5rem 1rem";
+      infoWindow.appendChild(infoDiv);
+      let cvInfo = document.createElement("p");
+      cvInfo.textContent =
+        "Denna ruta kommer ha sitt egna projekt i framtiden. Se fram emot det!";
+      cvInfo.style.fontSize = "1.3rem";
+      infoDiv.appendChild(cvInfo);
+      // let cvLink = document.createElement("a");
+      // cvLink.href =
+      //   "https://chargermaster.github.io/Code_Jam_20203-_NumberGame/";
+      // cvLink.target = "_blank";
+      // cvLink.style.color = "black";
+      // cvLink.onmouseover = function () {
+      //   cvLink.style.color = "red";
+      // };
+      // cvLink.onmouseleave = function () {
+      //   cvLink.style.color = "black";
+      // };
+      // let testLink = document.createTextNode("här");
+      // cvLink.appendChild(testLink);
+      // cvInfo.appendChild(cvLink);
+    } else if (this.id === "BlankItem2") {
+      let infoDiv = document.createElement("article");
+      infoDiv.style.display = "flex";
+      infoDiv.style.flexDirection = "row";
+      infoDiv.style.width = "100%";
+      infoDiv.style.height = "100%";
+      infoDiv.style.padding = "0.5rem 1rem";
+      infoWindow.appendChild(infoDiv);
+      let cvInfo = document.createElement("p");
+      cvInfo.textContent =
+        "Denna ruta kommer ha sitt egna projekt i framtiden. Se fram emot det!";
+      cvInfo.style.fontSize = "1.3rem";
+      infoDiv.appendChild(cvInfo);
+      // let cvLink = document.createElement("a");
+      // cvLink.href =
+      //   "https://chargermaster.github.io/Code_Jam_20203-_NumberGame/";
+      // cvLink.target = "_blank";
+      // cvLink.style.color = "black";
+      // cvLink.onmouseover = function () {
+      //   cvLink.style.color = "red";
+      // };
+      // cvLink.onmouseleave = function () {
+      //   cvLink.style.color = "black";
+      // };
+      // let testLink = document.createTextNode("här");
+      // cvLink.appendChild(testLink);
+      // cvInfo.appendChild(cvLink);
     }
   }
 }
