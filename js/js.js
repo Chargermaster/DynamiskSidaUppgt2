@@ -208,7 +208,7 @@ const CVTextContainer = document.getElementById("CvTextContainer");
 
 //JS reader and printer function
 async function getCV() {
-  const response = await fetch("~/json/json.json");
+  const response = await fetch("~/../json/json.json");
   if (response.ok) {
     const json = await response.json();
 
