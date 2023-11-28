@@ -86,7 +86,8 @@ function showInfo() {
 
       //Creates the link that leads to the actual project.
       let cvLink = document.createElement("a");
-      cvLink.href = "/cv.html";
+      cvLink.href =
+        "https://chargermaster.github.io/DynamiskSidaUppgt2/cv.html";
 
       //A seemingly complicated solution to a simple problem.
       //Apprently styles created via JS takes precidence over style rules in a .css document as they count as inline styling so a:hover doesn't work(?)
@@ -207,7 +208,7 @@ const CVTextContainer = document.getElementById("CvTextContainer");
 
 //JS reader and printer function
 async function getCV() {
-  const response = await fetch("../json/json.json");
+  const response = await fetch("~/json/json.json");
   if (response.ok) {
     const json = await response.json();
 
